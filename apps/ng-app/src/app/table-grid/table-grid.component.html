@@ -1,0 +1,15 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns">{{col}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of DataSource">
+      <td *ngFor="let col of columns">{{record[col]}}</td>
+      <td>
+        <button class="btn btn-warning" (click)="onSelected(record)">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

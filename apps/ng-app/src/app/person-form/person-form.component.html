@@ -1,0 +1,38 @@
+<h2>The Reactive Form</h2>
+
+<div>
+  <form name="frmPerson" [formGroup]="frmPerson"
+    (ngSubmit)="save()">
+    <div class="form-group">
+      <label>Person Id</label>
+      <input type="text" name="PersonId"
+        formControlName="PersonId">
+        <div class="alert alert-danger" *ngIf="frmPerson.controls['PersonId'].dirty&&frmPerson.controls['PersonId'].invalid">
+           <p *ngIf="frmPerson.controls['PersonId'].errors?.['required']">The PersonId is required</p>
+           <p *ngIf="!frmPerson.controls['PersonId'].errors?.['even']">The PersonId must be even</p>
+        </div>
+    </div>
+    <div class="form-group">
+      <label>Person Name</label>
+      <input type="text" name="PersonName"
+      formControlName="PersonName"
+       >
+    </div>
+    <div class="form-group">
+      <label>Entered Person Name:  </label>
+    </div>
+
+    <div class="btn-group-lg">
+      <input type="submit" value="Save" class="btn btn-warning">
+      <input type="button" value="Reset"
+       (click)="reset()"
+      class="btn btn-primary">
+    </div>
+</form>
+<hr/>
+<div class="container">
+   <strong>
+    {{persons|json}}
+   </strong>
+</div>
+</div>

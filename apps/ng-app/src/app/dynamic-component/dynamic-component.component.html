@@ -1,0 +1,21 @@
+<h2>The Dynamic Form</h2>
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="save()">
+    <div *ngFor="let key of formKeys">
+      <b>{{key}}: </b><input  [formControlName]="key"><br/>
+      <div class="alert alert-danger" *ngIf="myForm.controls[key].dirty&&myForm.controls[key].invalid">
+         <p *ngIf="myForm.controls[key].errors?.['required']">
+            The value for {{key}} is required
+         </p>
+      </div>
+    </div>
+    <input type="submit" value="Save">
+  </form>
+</div>
+<div>
+<br/>
+<div *ngFor="let key of formKeys">
+  <div>{{key}}: {{myForm.get(key)?.value}}</div>
+</div>
+
+</div>

@@ -1,0 +1,22 @@
+<h1>The Angular Single Page Application</h1>
+
+<table class="table table-bordered table-striped table-dark">
+  <tbody>
+    <tr>
+      <td>
+        <!--The Query to the Route Table-->
+        <a [routerLink]="['']">Products List</a>
+      </td>
+      <td>
+        <a [routerLink]="['create']">Create Product</a>
+      </td>
+      <td>
+        <a [routerLink]="['lazy']">Utility</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr/>
+
+<router-outlet></router-outlet>
+

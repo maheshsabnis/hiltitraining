@@ -1,0 +1,5 @@
+<h2>List of Products</h2>
+
+<my-ngnx-app-table-grid [DataSource]="products"
+ (selected)="navigateToEdit($event)"
+></my-ngnx-app-table-grid>
